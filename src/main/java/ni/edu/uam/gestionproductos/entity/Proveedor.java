@@ -1,4 +1,4 @@
-package ni.edu.uam.gestionproductos.model;
+package ni.edu.uam.gestionproductos.entity;
 
 import jakarta.persistence.*;
 

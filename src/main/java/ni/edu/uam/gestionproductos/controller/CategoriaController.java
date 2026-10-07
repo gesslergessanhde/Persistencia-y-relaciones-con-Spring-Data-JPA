@@ -1,6 +1,7 @@
+// CategoriaController.java
 package ni.edu.uam.gestionproductos.controller;
 
-import ni.edu.uam.gestionproductos.model.Categoria;
+import ni.edu.uam.gestionproductos.entity.Categoria;
 import ni.edu.uam.gestionproductos.repository.CategoriaRepository;
 import org.springframework.web.bind.annotation.*;
 

@@ -1,7 +1,9 @@
-package ni.edu.uam.gestionproductos.model;
+package ni.edu.uam.gestionproductos.entity;
 
 import jakarta.persistence.*;
 import java.math.BigDecimal;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Table(name = "producto")
@@ -34,6 +36,14 @@ public class Producto {
     @Column(nullable = false)
     private int existencia;
 
+    @ManyToMany
+    @JoinTable(
+            name = "producto_etiqueta",
+            joinColumns = @JoinColumn(name = "producto_id"),
+            inverseJoinColumns = @JoinColumn(name = "etiqueta_id")
+    )
+    private Set<Etiqueta> etiquetas = new HashSet<>();
+
     public Producto() {}
 
     public Integer getId() { return id; }
@@ -59,4 +69,7 @@ public class Producto {
 
     public int getExistencia() { return existencia; }
     public void setExistencia(int existencia) { this.existencia = existencia; }
+
+    public Set<Etiqueta> getEtiquetas() { return etiquetas; }
+    public void setEtiquetas(Set<Etiqueta> etiquetas) { this.etiquetas = etiquetas; }
 }
